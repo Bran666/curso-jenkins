@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Activando el entrono virtual"
-if [!"-d venv"]; then
+if [! -d "venv"]; then
     python3 -m venv venv
 fi
 
