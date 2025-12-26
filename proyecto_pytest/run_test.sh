@@ -7,6 +7,9 @@ if [ ! -d "venv" ]; then
     python3 -m venv venv
 fi
 
+echo "Instalando pip en el venv"
+venv/bin/python -m ensurepip --upgrade
+
 echo "Instalando dependencias"
 venv/bin/python -m pip install --upgrade pip
 venv/bin/python -m pip install -r requirements.txt
