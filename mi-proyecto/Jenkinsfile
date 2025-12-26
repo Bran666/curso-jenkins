@@ -1,0 +1,36 @@
+/* groovylint-disable-next-line CompileStatic */
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            /* groovylint-disable-next-line SpaceBeforeClosingBrace */
+            steps {
+            sh 'mvn clean install'}
+        }
+
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Simulando un despliegue a un servidor"
+            }
+        }
+    }
+
+    post {
+        always {
+            echo " Siempre se ejecutara"
+        }
+        succes {
+            echo " Exito este bloque se ejecuta si todo pasa correctamente"
+        }
+        failure {
+            echo "Fallo este bloque se ejecuta si el pipeline falla"
+        }
+    }
+}
+
