@@ -1,5 +1,4 @@
 #!/bin/sh
-
 set -e
 
 echo "Preparando entorno"
@@ -9,8 +8,8 @@ if [ ! -d "venv" ]; then
 fi
 
 echo "Instalando dependencias"
-venv/bin/pip install --upgrade pip
-venv/bin/pip install -r requirements.txt
+venv/bin/python -m pip install --upgrade pip
+venv/bin/python -m pip install -r requirements.txt
 
 mkdir -p reports
 
