@@ -4,7 +4,7 @@ set -e
 echo "Activando el entorno virtual"
 
 if [ ! -d "venv" ]; then
-    python -m venv venv
+    python3 -m venv venv
 fi
 
 if [ -f "venv/bin/activate" ]; then
