@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "Ingresando al proyecto"
-cd proyecto_pytest
 
 echo "Activando el entrono virtual"
 source ven/bin/activate
