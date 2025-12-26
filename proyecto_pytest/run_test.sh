@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 echo "Activando el entorno virtual"
 
@@ -17,11 +16,11 @@ else
 fi
 
 echo "Instalando dependencias"
-pip install --upgrade pip
-pip install -r requirements.txt
+pip install --upgrade pip --break-system-package
+pip install -r requirements.txt --break-system-package
 
 echo "Ejecutando pruebas"
-pytest test \
+venv/bin/python -m tests \
   --junitxml=reports/test-results.xml \
   --html=reports/test-results.html \
   --self-contained-html
