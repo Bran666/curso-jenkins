@@ -20,9 +20,6 @@ pip install --upgrade pip --break-system-package
 pip install -r requirements.txt --break-system-package
 
 echo "Ejecutando pruebas"
-venv/bin/python -m tests \
-  --junitxml=reports/test-results.xml \
-  --html=reports/test-results.html \
-  --self-contained-html
+venv/bin/python -m tests/ --junitxml=reports/test-results.xml --html=reports/test-results.html --self-contained-html
 
 echo "Pruebas finalizadas"
