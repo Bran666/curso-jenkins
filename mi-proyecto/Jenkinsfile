@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             /* groovylint-disable-next-line SpaceBeforeClosingBrace */
             steps {
-            sh 'mvn clean install'}
+            sh 'cd mi-proyecto && mvn clean install'}
         }
 
         stage('Test') {
