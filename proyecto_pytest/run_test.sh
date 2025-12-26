@@ -5,7 +5,15 @@ if [!"-d venv"]; then
     python3 -m venv venv
 fi
 
-source ven/bin/activate
+if [-f "venv/bin/activate"]; then
+    source venv/bin/activate
+elif [ -f "venv/Scripts/activate"]; then
+    source venv/Scripts/activate
+else
+    echo "no se pudo activar el VM"
+    exit 1
+fi
+
 
 echo "Instalando dependencias"
 pip install --upgrade pip
